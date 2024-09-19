@@ -19,7 +19,7 @@ void createRecord(){
     printf("please enter name:\n");
     scanf("%s", records[recordCount].name);
     printf("please enter your age:\n");
-    scanf("%d", records[recordCount].age);
+    scanf("%d", &records[recordCount].age);
     recordCount++;
     printf("already created the record!\n");
 
@@ -42,11 +42,11 @@ void updateRecord(){
 
     printf("~update the record~\n");
     int id_update;
+    printf("enter the record you want to update: \n");
+    scanf("%d", &id_update);
     
     if(id_update > 0 && id_update <= recordCount){
         
-        printf("enter the record you want to update: \n");
-        scanf("%d", &id_update);
         printf("please enter the new name: ");
         scanf("%s", records[id_update-1].name);
         printf("please enter the new age: ");
@@ -106,5 +106,7 @@ int main(){
         }
     }while(choice != 5);
 
+    return 0;
+}
     return 0;
 }
